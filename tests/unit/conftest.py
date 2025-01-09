@@ -1,6 +1,7 @@
 import pytest
-from script import deploy
 from moccasin.boa_tools import VyperContract
+
+from script import deploy
 
 
 @pytest.fixture(scope="function")
