@@ -1,6 +1,7 @@
 import boa
-from eth_utils import to_wei
 from eth.constants import ZERO_ADDRESS
+from eth_utils import to_wei
+
 from script.deploy import INITIAL_SUPPLY
 
 RANDOM_USER = boa.env.generate_address("random")

@@ -42,12 +42,14 @@ def __init__(initial_supply: uint256):
     erc20.__init__(NAME, SYMBOL, DECIMALS, NAME, EIP712_VERSION)
     erc20._mint(msg.sender, initial_supply)
 
+
 # WORKSHOP
 # @dev note on coverage, it should take all assert into account not just entering
 # one time in the call
 @external
 def transfer_from_owner(to: address, amount: uint256):
     erc20._transfer(ownable.owner, to, amount)
+
 
 # This is a bug! Remove it (but our stateful tests should catch it!)
 @external

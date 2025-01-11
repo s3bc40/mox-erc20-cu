@@ -4,19 +4,20 @@ is always equal to the sum of all balances. And there is an intentional
 mistake in super_mint function.
 """
 
-from contracts import snek_token
+import boa
+from boa.test.strategies import strategy
+from eth.constants import UINT_256_MAX
 from hypothesis import assume, settings
 from hypothesis.stateful import (
     RuleBasedStateMachine,
     initialize,
-    rule,
     invariant,
+    rule,
 )
 from hypothesis.strategies import integers
-from boa.test.strategies import strategy
+
+from contracts import snek_token
 from script.deploy import INITIAL_SUPPLY
-from eth.constants import UINT_256_MAX
-import boa
 
 NB_ADDRESSES = 10
 
