@@ -24,9 +24,10 @@ def test_token_emits_event(snek_contract):
 
 # WORKSHOP
 def test_token_transfer_empty_address_should_fail(snek_contract):
+    print("snek_contract.owner()", snek_contract.owner())
     with boa.env.prank(snek_contract.owner()):
         with boa.reverts("erc20: transfer to the zero address"):
-            snek_contract.transfer_from_owner(ZERO_ADDRESS, TRANSFER_AMOUNT)
+            snek_contract.transfer_from_owner(ZERO_ADDRESS.hex(), TRANSFER_AMOUNT)
 
 
 def test_token_tranfer_not_enough_balance_should_fail(snek_contract):
